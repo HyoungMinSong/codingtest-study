@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        int[] a = {1,5,2,8,4,10,5,43,6,5,1,}; // 1,5,2,8,4,10,43,6
+        int[] b = Arrays.stream(a).distinct().toArray(); // Stream을 이용한
+        System.out.println(Arrays.toString(b));
+
+        ArrayList<Integer> c = new ArrayList<>(); //ArrayList를 이용한
+        for (int i = 0; i <a.length ; i++) {
+            if (!c.contains(a[i])) {
+                c.add(a[i]);
+            }
+        }
+        System.out.println(c);
+    }
+}
+
+
+
+
+
