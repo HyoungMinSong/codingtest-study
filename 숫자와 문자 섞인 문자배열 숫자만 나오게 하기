@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        // sort를 통해 마지막 자리 지우기
+        String[] a = {"1", "2", "0", "8", "x", "7","10"};
+        Arrays.sort(a);
+        System.out.println(Arrays.toString(a)); //[0, 1, 10, 2, 7, 8, x]
+
+        //try catch를 통해서 잡기 
+        ArrayList<Integer> b= new ArrayList();
+        for (int i =0; i<a.length; i++) {
+            if (isStringDouble(a[i])) {
+                b.add(Integer.parseInt(a[i]));
+            }
+        }
+        Collections.sort(b);
+        System.out.println(b.toString()); //[0, 1, 2, 7, 8, 10]
+    }
+    public static boolean isStringDouble(String c) {
+        try{
+            Double.parseDouble(c);
+            return true;
+        } catch(NumberFormatException e) {
+            return false;
+        }
+    }
+}
+
+
+
+
+
